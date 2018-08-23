@@ -40,13 +40,27 @@ class EntryViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         
         
-        guard let entry = entry else {return}
-        guard let newTitle = titleTextField.text else {return}
-        guard let newBody = detailsTextView.text else {return}
+        if let entry = entry  {
+            guard let newTitle = titleTextField.text else {return}
+            guard let newBody = detailsTextView.text else {return}
+            EntryController.shared.update(entryToUpdate: entry, titleUpdate: newTitle, bodyUpdate: newBody)
+        }
+        else{
+            guard let newTitle = titleTextField.text else {return}
+            guard let newBody = detailsTextView.text else {return}
+            EntryController.shared.addEntryWith(title: newTitle , text: newBody)
+            }
         
-        EntryController.shared.update(entryToUpdate: entry, titleUpdate: newTitle, bodyUpdate: newBody)
+        
         
     }
+    
+    //Clear Text
+    @IBAction func clearTextButtonTapped(_ sender: Any) {
+        titleTextField.text = ""
+        detailsTextView.text = ""
+    }
+    
     
 
 }

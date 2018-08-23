@@ -31,7 +31,12 @@ class EntryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "entryCell", for: indexPath)
         let entry = EntryController.shared.entries[indexPath.row]
         cell.textLabel?.text = entry.title
-        cell.detailTextLabel?.text = "\(entry.timeStamp)"
+        //Make the date look pretty
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        dateFormatter.locale = Locale(identifier: "en_US")
+        cell.detailTextLabel?.text = dateFormatter.string(from: entry.timeStamp)
 
         return cell
     }

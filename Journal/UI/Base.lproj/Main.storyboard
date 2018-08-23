@@ -80,22 +80,36 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N9U-TO-Vxb">
-                                <rect key="frame" x="38" y="116" width="300" height="491"/>
+                                <rect key="frame" x="38" y="116" width="300" height="407"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jf7-ft-tMM">
+                                <rect key="frame" x="144" y="538" width="87" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="wpT-x9-1FK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Clear Text"/>
+                                <connections>
+                                    <action selector="clearTextButtonTapped:" destination="h4h-VA-aoD" eventType="touchUpInside" id="9fd-4t-r5J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fsY-bk-qdY" firstAttribute="trailing" secondItem="jf7-ft-tMM" secondAttribute="trailing" constant="144" id="0Ew-f1-r5I"/>
                             <constraint firstItem="90a-9N-feF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fsY-bk-qdY" secondAttribute="leading" id="1Xq-9i-WGO"/>
                             <constraint firstItem="90a-9N-feF" firstAttribute="centerX" secondItem="fsY-bk-qdY" secondAttribute="centerX" id="9QG-NK-eET"/>
                             <constraint firstItem="90a-9N-feF" firstAttribute="width" secondItem="VUV-rf-Kj1" secondAttribute="width" multiplier="0.8" id="EsK-4K-Qx6"/>
+                            <constraint firstItem="fsY-bk-qdY" firstAttribute="bottom" secondItem="jf7-ft-tMM" secondAttribute="bottom" constant="49" id="OX4-4R-v7j"/>
+                            <constraint firstItem="jf7-ft-tMM" firstAttribute="leading" secondItem="fsY-bk-qdY" secondAttribute="leading" constant="144" id="SSV-7m-eCi"/>
                             <constraint firstItem="N9U-TO-Vxb" firstAttribute="leading" secondItem="fsY-bk-qdY" secondAttribute="leading" constant="38" id="de9-tc-dvb"/>
                             <constraint firstItem="90a-9N-feF" firstAttribute="top" secondItem="fsY-bk-qdY" secondAttribute="top" constant="14" id="fpG-C3-ARh"/>
                             <constraint firstItem="fsY-bk-qdY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="90a-9N-feF" secondAttribute="trailing" id="ipK-DI-HxG"/>
                             <constraint firstItem="fsY-bk-qdY" firstAttribute="trailing" secondItem="N9U-TO-Vxb" secondAttribute="trailing" constant="37" id="lJh-Y0-AIy"/>
-                            <constraint firstItem="fsY-bk-qdY" firstAttribute="bottom" secondItem="N9U-TO-Vxb" secondAttribute="bottom" constant="16" id="rkB-t9-Dnb"/>
+                            <constraint firstItem="fsY-bk-qdY" firstAttribute="bottom" secondItem="N9U-TO-Vxb" secondAttribute="bottom" constant="100" id="rkB-t9-Dnb"/>
                             <constraint firstItem="N9U-TO-Vxb" firstAttribute="top" secondItem="90a-9N-feF" secondAttribute="bottom" constant="8" id="vxy-rC-xeD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fsY-bk-qdY"/>
