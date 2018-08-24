@@ -9,7 +9,7 @@
 import UIKit
 
 class EntryViewController: UIViewController {
-
+    
     var entry: Entry?
     
     //IBOutlet Variables
@@ -18,7 +18,7 @@ class EntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,17 +39,16 @@ class EntryViewController: UIViewController {
     //save
     @IBAction func saveButtonTapped(_ sender: Any) {
         
+        guard let newTitle = titleTextField.text else {return}
+        guard let newBody = detailsTextView.text else {return}
         
         if let entry = entry  {
-            guard let newTitle = titleTextField.text else {return}
-            guard let newBody = detailsTextView.text else {return}
             EntryController.shared.update(entryToUpdate: entry, titleUpdate: newTitle, bodyUpdate: newBody)
         }
         else{
-            guard let newTitle = titleTextField.text else {return}
-            guard let newBody = detailsTextView.text else {return}
             EntryController.shared.addEntryWith(title: newTitle , text: newBody)
-            }
+        }
+        navigationController?.popViewController(animated: true)
         
         
         
@@ -62,5 +61,5 @@ class EntryViewController: UIViewController {
     }
     
     
-
+    
 }
